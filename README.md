@@ -1,4 +1,4 @@
-## The place for random half-finished projectd
+## The place for random half-finished projects
 
 ## License
 Everything in this repo is licensed under the MIT License.

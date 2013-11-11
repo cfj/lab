@@ -1,0 +1,136 @@
+/*Note: All unprefixed. Probably won't work out of the box unless you're from the future.*/
+
+body {
+    background: linear-gradient(top, rgba(100, 100, 100, 0.2) 0%, rgba(255, 255, 255, 0.5) 40%, #ffffff 100%);
+    background-repeat: no-repeat;
+    color: #444;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+footer {
+  margin-top: 10%;
+  font-size: 0.8em;
+}
+
+.main {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.description {
+    margin-left: 170px;
+    line-height: 170%;
+}
+
+  .description h1 {
+    font-size: 1.5em;
+  }
+
+  .description a {
+    text-decoration: none;
+    color: #7FC1FF;
+    font-weight: bold;
+    transition: all .2s;
+  }
+
+    .description a:hover {
+      color: #5079A0;
+    }
+
+ul {
+    margin: 200px auto;
+    margin-bottom: 160px;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+li {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin-left: -4px;
+    border-radius: 50%;
+    
+    background: radial-gradient(50% 40%, circle cover, #fcfcfc, #efeff1 66%, #9b5050 100%);
+}
+
+    li:before {
+        content: "";
+        width: 1px;
+        height: 200px;
+        position: absolute;
+        top: -200px;
+        left: 50%;
+        background: #bcbcbc;
+    }
+
+    li:after {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 100px;
+        left: 0px;
+
+        background: radial-gradient(50% 50%, circle cover, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+
+        transform: rotateX(70deg);
+    }
+
+    li:first-child {
+        transform-origin: 50% -200px;
+        animation: left-ball 1s cubic-bezier(.25,.5,.75,.5) infinite;
+    }
+
+        li:first-child:after {
+            animation: left-shadow 1s cubic-bezier(.25,.5,.75,.5) infinite;
+        }
+
+    li:last-child {
+        transform-origin: 50% -200px;
+        animation: right-ball 1s cubic-bezier(.25,.5,.75,.5) .5s infinite;
+    }
+
+        li:last-child:after {
+            animation: right-shadow 1s cubic-bezier(.25,.5,.75,.5) .5s infinite;
+        }
+
+
+
+@keyframes left-ball {
+    25% {
+        transform: rotateZ(40deg);
+    }
+    50% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes left-shadow {
+    25% {
+        transform: translate(75px, 30px) rotateZ(-40deg) rotateX(70deg) scale(0.7);
+    }
+    50% {
+        transform: rotateZ(0) rotateX(70deg);
+    }
+}
+
+@keyframes right-ball {
+    25% {
+        transform: rotateZ(-40deg);
+    }
+    50% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes right-shadow {
+    25% {
+        transform: translate(-75px, 30px) rotateZ(40deg) rotateX(70deg) scale(0.7);
+    }
+    50% {
+        transform: rotateZ(0) rotateX(70deg);
+    }
+}
